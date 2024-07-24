@@ -5,7 +5,6 @@ import java.util.Calendar;
 import java.util.Date;
 
 import javax.swing.JOptionPane;
-
 import entities.Department;
 import entities.HourContract;
 import entities.Worker;
@@ -38,8 +37,8 @@ public class Program {
 			Date date2 = sdf2.parse(JOptionPane.showInputDialog("Enter month and year to calculate income (MM/YYYY)"));
 			Calendar cal = Calendar.getInstance();
 			cal.setTime(date2);
-			JOptionPane.showMessageDialog(null, "Name: " + worker.getName() + "\nDepartment: " + department.getName()
-					+ "\nIncome for " + sdf2.format(date2) + ": $"
+			JOptionPane.showMessageDialog(null, "Name: " + worker.getName() + "\nDepartment: "
+					+ worker.getDepartment().getName() + "\nIncome for " + sdf2.format(date2) + ": $"
 					+ String.format("%.2f", worker.income(cal.get(Calendar.YEAR), cal.get(Calendar.MONTH) + 1)));
 
 		} catch (Exception e) {
